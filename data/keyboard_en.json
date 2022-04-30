@@ -1,0 +1,324 @@
+[
+	{
+		"inner": [
+			"`",
+			"~"
+		],
+		"keyCode": "192",
+		"value": "`",
+		"shiftValue": "~",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"1",
+			"!"
+		],
+		"keyCode": "49",
+		"value": "1",
+		"shiftValue": "!",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"2",
+			"@"
+		],
+		"keyCode": "50",
+		"value": "2",
+		"shiftValue": "@",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"3",
+			"#"
+		],
+		"keyCode": "51",
+		"value": "3",
+		"shiftValue": "#",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"4",
+			"$"
+		],
+		"keyCode": "52",
+		"value": "4",
+		"shiftValue": "$",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"5",
+			"%"
+		],
+		"keyCode": "53",
+		"value": "5",
+		"shiftValue": "%",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"6",
+			"^"
+		],
+		"keyCode": "54",
+		"value": "6",
+		"shiftValue": "^",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"7",
+			"&"
+		],
+		"keyCode": "55",
+		"value": "7",
+		"shiftValue": "&",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"8",
+			"*"
+		],
+		"keyCode": "56",
+		"value": "8",
+		"shiftValue": "*",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"9",
+			"("
+		],
+		"keyCode": "57",
+		"value": "9",
+		"shiftValue": "(",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"0",
+			")"
+		],
+		"keyCode": "48",
+		"value": "0",
+		"shiftValue": ")",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"-",
+			"_"
+		],
+		"keyCode": "109",
+		"shiftKeyCode": "189",
+		"value": "-",
+		"shiftValue": "_",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"=",
+			"+"
+		],
+		"keyCode": "61",
+		"shiftKeyCode": "107",
+		"value": "=",
+		"shiftValue": "+",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Backspace"
+		],
+		"keyCode": "8",
+		"shiftKeyCode": "false",
+		"value": "Backspace",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Tab"
+		],
+		"keyCode": "9",
+		"shiftKeyCode": "false",
+		"value": "Tab",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"q",
+			"Q"
+		],
+		"keyCode": "81",
+		"shiftKeyCode": "false",
+		"value": "q",
+		"shiftValue": "Q",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"w",
+			"W"
+		],
+		"keyCode": "87",
+		"shiftKeyCode": "false",
+		"value": "w",
+		"shiftValue": "W",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"e",
+			"E"
+		],
+		"keyCode": "69",
+		"shiftKeyCode": "false",
+		"value": "e",
+		"shiftValue": "E",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"r",
+			"R"
+		],
+		"keyCode": "82",
+		"shiftKeyCode": "false",
+		"value": "r",
+		"shiftValue": "R",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"t",
+			"T"
+		],
+		"keyCode": "84",
+		"shiftKeyCode": "false",
+		"value": "t",
+		"shiftValue": "T",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"y",
+			"Y"
+		],
+		"keyCode": "89",
+		"shiftKeyCode": "false",
+		"value": "y",
+		"shiftValue": "Y",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"u",
+			"U"
+		],
+		"keyCode": "85",
+		"shiftKeyCode": "false",
+		"value": "u",
+		"shiftValue": "U",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"i",
+			"I"
+		],
+		"keyCode": "73",
+		"shiftKeyCode": "false",
+		"value": "i",
+		"shiftValue": "I",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"o",
+			"O"
+		],
+		"keyCode": "79",
+		"shiftKeyCode": "false",
+		"value": "o",
+		"shiftValue": "O",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"p",
+			"P"
+		],
+		"keyCode": "80",
+		"shiftKeyCode": "false",
+		"value": "p",
+		"shiftValue": "P",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"[",
+			"{"
+		],
+		"keyCode": "160",
+		"shiftKeyCode": "219",
+		"value": "[",
+		"shiftValue": "{",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"]",
+			"}"
+		],
+		"keyCode": "221",
+		"shiftKeyCode": "false",
+		"value": "]",
+		"shiftValue": "}",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Del"
+		],
+		"keyCode": "46",
+		"shiftKeyCode": "false",
+		"value": "Del",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	}
+]
