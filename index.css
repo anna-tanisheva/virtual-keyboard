@@ -75,6 +75,7 @@ body {
 }
 
 .main .key {
+  position: relative;
   border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -135,6 +136,14 @@ body {
       -ms-grid-row-align: center;
       align-self: center;
   height: 50%;
+}
+
+.main .key-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .footer .container {

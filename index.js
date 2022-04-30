@@ -35,10 +35,12 @@ let serverKeys = ['Tab', 'Backspace', 'Del'];
 
 function createKey(value, shiftValue, keyCode, inner) {
 	let key = document.createElement('div');
+	let keyOverlay = document.createElement('div');
 	key.classList.add('key');
 	key.setAttribute('data-key', keyCode);
 	key.setAttribute('data-value', value);
 	key.setAttribute('data-shift-value', shiftValue);
+	keyOverlay.classList.add('key-overlay');
 	if (inner.length > 1) {
 		inner.forEach((elem) => {
 			if (elem === inner[0]) {
@@ -60,17 +62,15 @@ function createKey(value, shiftValue, keyCode, inner) {
 		if (key.getAttribute('data-value') === 'Del') {
 			key.classList.add('span1');
 		}
-		// console.log(inner[0])
 		if (serverKeys.includes(inner[0])) {
-			key.classList.add('server')
+			keyOverlay.classList.add('server')
 		}
 		let first = document.createElement('span');
 		first.innerHTML += inner[0];
 		first.classList.add('inner');
 		key.append(first);
 	}
-
-
+	key.append(keyOverlay)
 	return key;
 }
 
@@ -107,18 +107,7 @@ KEYBOARD.addEventListener('click', (e) => {
 	//EL for regular keys
 	let caretPos = OUTPUT.selectionStart;
 
-	if (e.target.classList.contains('key') && !e.target.classList.contains('server')) {
-		let clickedKey = e.target;
-		let dataValue = clickedKey.getAttribute('data-value');
-		let dataShiftValue = clickedKey.getAttribute('data-shift-value');
-		if (caretPos === OUTPUT.value.length) {
-			OUTPUT.value += dataValue
-		} else if (caretPos < OUTPUT.value.length) {
-			OUTPUT.value = OUTPUT.value.slice(0, caretPos) + dataValue + OUTPUT.value.slice(caretPos)
-			OUTPUT.selectionStart = caretPos + 1
-			OUTPUT.selectionEnd = caretPos + 1
-		}
-	} else if (e.target.classList.contains('inner') && !e.target.parentNode.classList.contains('server')) {
+	if (e.target.classList.contains('key-overlay') && !e.target.classList.contains('server')) {
 		let clickedKey = e.target.parentNode;
 		let dataValue = clickedKey.getAttribute('data-value');
 		let dataShiftValue = clickedKey.getAttribute('data-shift-value');
@@ -132,31 +121,22 @@ KEYBOARD.addEventListener('click', (e) => {
 	}
 
 	//EL for serve keys
-	if (e.target.classList.contains('key') && e.target.classList.contains('server')) {
-		let clickedKey = e.target;
-		let dataValue = clickedKey.getAttribute('data-value');
-
-		if (dataValue === 'Backspace') {
-			OUTPUT.value = OUTPUT.value.slice(0, -1)
-		}
-
-		if (dataValue === 'Tab') {
-			OUTPUT.value += `    `
-		}
-		if (dataValue === 'Del') {
-			let caretPos = OUTPUT.selectionStart;
-			if (caretPos < OUTPUT.value.length) {
-				OUTPUT.value = OUTPUT.value.split('').filter((data, idx) => idx !== caretPos).join('');
-				OUTPUT.selectionStart = caretPos
-				OUTPUT.selectionEnd = caretPos
-			}
-		}
-	} else if (e.target.classList.contains('inner') && e.target.parentNode.classList.contains('server')) {
+	if (e.target.classList.contains('key-overlay') && e.target.classList.contains('server')) {
 		let clickedKey = e.target.parentNode;
 		let dataValue = clickedKey.getAttribute('data-value');
 
 		if (dataValue === 'Backspace') {
-			OUTPUT.value = OUTPUT.value.slice(0, -1)
+			let caretPos = OUTPUT.selectionStart;
+			if (caretPos === 0) {
+				return
+			}
+			if (caretPos === OUTPUT.value.length) {
+				OUTPUT.value = OUTPUT.value.slice(0, -1)
+			} else if (caretPos < OUTPUT.value.length) {
+				OUTPUT.value = OUTPUT.value.split('').filter((data, idx) => idx !== caretPos - 1).join('');
+				OUTPUT.selectionStart = caretPos - 1
+				OUTPUT.selectionEnd = caretPos - 1
+			}
 		}
 
 		if (dataValue === 'Tab') {
