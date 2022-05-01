@@ -116,6 +116,17 @@ body {
   height: 80%;
 }
 
+.main .span1 {
+  grid-column: span 1;
+}
+
+.main .span1 .inner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 50%;
+}
+
 .main .span2 {
   grid-column: span 2;
 }
@@ -127,11 +138,22 @@ body {
   height: 50%;
 }
 
-.main .span1 {
-  grid-column: span 1;
+.main .span3 {
+  grid-column: span 3;
 }
 
-.main .span1 .inner {
+.main .span3 .inner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 50%;
+}
+
+.main .span6 {
+  grid-column: span 6;
+}
+
+.main .span6 .inner {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;

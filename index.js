@@ -59,8 +59,15 @@ function createKey(value, shiftValue, keyCode, inner) {
 		})
 	} else {
 		key.classList.add('span2');
-		if (key.getAttribute('data-value') === 'Del') {
+		if (key.getAttribute('data-value') === 'Del' || key.getAttribute('data-value') === 'Ctrl-left' || key.getAttribute('data-value') === 'Win' || key.getAttribute('data-value') === 'Alt-left' || key.getAttribute('data-value') === 'Arrow-up' || key.getAttribute('data-value') === 'Alt-right' || key.getAttribute('data-value') === 'Arrow-left' || key.getAttribute('data-value') === 'Arrow-down' || key.getAttribute('data-value') === 'Arrow-right' || key.getAttribute('data-value') === 'Shift-right') {
+			key.classList.remove('span2');
 			key.classList.add('span1');
+		} else if (key.getAttribute('data-value') === 'Space') {
+			key.classList.remove('span2');
+			key.classList.add('span6');
+		} else if (key.getAttribute('data-value') === 'Shift-left') {
+			key.classList.remove('span2');
+			key.classList.add('span3');
 		}
 		if (serverKeys.includes(inner[0])) {
 			keyOverlay.classList.add('server')

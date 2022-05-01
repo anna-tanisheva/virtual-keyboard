@@ -320,5 +320,411 @@
 		"shiftValue": "false",
 		"ctrlValue": "false",
 		"altValue": "false"
+	},
+	{
+		"inner": [
+			"CapsLock"
+		],
+		"keyCode": "20",
+		"shiftKeyCode": "false",
+		"value": "CapsLock",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"a",
+			"A"
+		],
+		"keyCode": "65",
+		"shiftKeyCode": "false",
+		"value": "a",
+		"shiftValue": "A",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"s",
+			"S"
+		],
+		"keyCode": "83",
+		"shiftKeyCode": "false",
+		"value": "s",
+		"shiftValue": "S",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"d",
+			"D"
+		],
+		"keyCode": "68",
+		"shiftKeyCode": "false",
+		"value": "d",
+		"shiftValue": "D",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"f",
+			"F"
+		],
+		"keyCode": "70",
+		"shiftKeyCode": "false",
+		"value": "f",
+		"shiftValue": "F",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"g",
+			"G"
+		],
+		"keyCode": "71",
+		"shiftKeyCode": "false",
+		"value": "g",
+		"shiftValue": "G",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"h",
+			"H"
+		],
+		"keyCode": "72",
+		"shiftKeyCode": "false",
+		"value": "h",
+		"shiftValue": "H",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"j",
+			"J"
+		],
+		"keyCode": "74",
+		"shiftKeyCode": "false",
+		"value": "j",
+		"shiftValue": "J",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"k",
+			"K"
+		],
+		"keyCode": "75",
+		"shiftKeyCode": "false",
+		"value": "k",
+		"shiftValue": "K",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"l",
+			"L"
+		],
+		"keyCode": "76",
+		"shiftKeyCode": "false",
+		"value": "l",
+		"shiftValue": "L",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			";",
+			":"
+		],
+		"keyCode": "59",
+		"shiftKeyCode": "58",
+		"value": ";",
+		"shiftValue": ":",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"'",
+			"\""
+		],
+		"keyCode": "222",
+		"shiftKeyCode": "false",
+		"value": "'",
+		"shiftValue": "\"",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Enter"
+		],
+		"keyCode": "13",
+		"shiftKeyCode": "false",
+		"value": "Enter",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Shift"
+		],
+		"keyCode": "16",
+		"shiftKeyCode": "false",
+		"value": "Shift-left",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"z",
+			"Z"
+		],
+		"keyCode": "90",
+		"shiftKeyCode": "false",
+		"value": "z",
+		"shiftValue": "Z",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"x",
+			"X"
+		],
+		"keyCode": "88",
+		"shiftKeyCode": "false",
+		"value": "x",
+		"shiftValue": "X",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"c",
+			"C"
+		],
+		"keyCode": "67",
+		"shiftKeyCode": "false",
+		"value": "c",
+		"shiftValue": "C",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"v",
+			"V"
+		],
+		"keyCode": "86",
+		"shiftKeyCode": "false",
+		"value": "v",
+		"shiftValue": "V",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"b",
+			"B"
+		],
+		"keyCode": "66",
+		"shiftKeyCode": "false",
+		"value": "b",
+		"shiftValue": "B",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"n",
+			"N"
+		],
+		"keyCode": "78",
+		"shiftKeyCode": "false",
+		"value": "n",
+		"shiftValue": "N",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"m",
+			"M"
+		],
+		"keyCode": "77",
+		"shiftKeyCode": "false",
+		"value": "m",
+		"shiftValue": "M",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			",",
+			"<"
+		],
+		"keyCode": "108",
+		"shiftKeyCode": "60",
+		"value": ",",
+		"shiftValue": "<",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			".",
+			">"
+		],
+		"keyCode": "190",
+		"shiftKeyCode": "false",
+		"value": ".",
+		"shiftValue": ">",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"/",
+			"?"
+		],
+		"keyCode": "191",
+		"shiftKeyCode": "false",
+		"value": "/",
+		"shiftValue": "?",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"&#8593"
+		],
+		"keyCode": "16",
+		"shiftKeyCode": "false",
+		"value": "Arrow-up",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Shift"
+		],
+		"keyCode": "16",
+		"shiftKeyCode": "false",
+		"value": "Shift-right",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Ctrl"
+		],
+		"keyCode": "17",
+		"shiftKeyCode": "false",
+		"value": "Ctrl-left",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Win"
+		],
+		"keyCode": "91",
+		"shiftKeyCode": "false",
+		"value": "Win",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Alt"
+		],
+		"keyCode": "18",
+		"shiftKeyCode": "false",
+		"value": "Alt-left",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Space"
+		],
+		"keyCode": "32",
+		"shiftKeyCode": "false",
+		"value": "Space",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Alt"
+		],
+		"keyCode": "18",
+		"shiftKeyCode": "false",
+		"value": "Alt-right",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"Ctrl"
+		],
+		"keyCode": "17",
+		"shiftKeyCode": "false",
+		"value": "Ctrl-right",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"&#8592"
+		],
+		"keyCode": "37",
+		"shiftKeyCode": "false",
+		"value": "Arrow-left",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"&#8595"
+		],
+		"keyCode": "40",
+		"shiftKeyCode": "false",
+		"value": "Arrow-down",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
+	},
+	{
+		"inner": [
+			"&#8594"
+		],
+		"keyCode": "39",
+		"shiftKeyCode": "false",
+		"value": "Arrow-right",
+		"shiftValue": "false",
+		"ctrlValue": "false",
+		"altValue": "false"
 	}
 ]
