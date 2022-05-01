@@ -31,7 +31,8 @@ BODY.innerHTML = template;
 
 //key template
 const KEYBOARD = document.querySelector('.keyboard-wrapper');
-let serverKeys = ['Tab', 'Backspace', 'Del'];
+let serverKeys = ['Tab', 'Backspace', 'Del', 'Shift'];
+let shiftActive = false;
 
 function createKey(value, shiftValue, keyCode, inner) {
 	let key = document.createElement('div');
@@ -72,6 +73,9 @@ function createKey(value, shiftValue, keyCode, inner) {
 		if (serverKeys.includes(inner[0])) {
 			keyOverlay.classList.add('server')
 		}
+		if (key.getAttribute('data-value') === 'Shift-left' || key.getAttribute('data-value') === 'Shift-right') {
+			key.classList.add('shift')
+		}
 		let first = document.createElement('span');
 		first.innerHTML += inner[0];
 		first.classList.add('inner');
@@ -109,7 +113,7 @@ const OUTPUT = document.querySelector('.output')
 OUTPUT.addEventListener('blur', () => {
 	OUTPUT.focus()
 })
-
+//EL for keyboard
 KEYBOARD.addEventListener('click', (e) => {
 	//EL for regular keys
 	let caretPos = OUTPUT.selectionStart;
@@ -118,12 +122,22 @@ KEYBOARD.addEventListener('click', (e) => {
 		let clickedKey = e.target.parentNode;
 		let dataValue = clickedKey.getAttribute('data-value');
 		let dataShiftValue = clickedKey.getAttribute('data-shift-value');
-		if (caretPos === OUTPUT.value.length) {
-			OUTPUT.value += dataValue
-		} else if (caretPos < OUTPUT.value.length) {
-			OUTPUT.value = OUTPUT.value.slice(0, caretPos) + dataValue + OUTPUT.value.slice(caretPos)
-			OUTPUT.selectionStart = caretPos + 1
-			OUTPUT.selectionEnd = caretPos + 1
+		if (!shiftActive) {
+			if (caretPos === OUTPUT.value.length) {
+				OUTPUT.value += dataValue
+			} else if (caretPos < OUTPUT.value.length) {
+				OUTPUT.value = OUTPUT.value.slice(0, caretPos) + dataValue + OUTPUT.value.slice(caretPos)
+				OUTPUT.selectionStart = caretPos + 1
+				OUTPUT.selectionEnd = caretPos + 1
+			}
+		} else {
+			if (caretPos === OUTPUT.value.length) {
+				OUTPUT.value += dataShiftValue
+			} else if (caretPos < OUTPUT.value.length) {
+				OUTPUT.value = OUTPUT.value.slice(0, caretPos) + dataShiftValue + OUTPUT.value.slice(caretPos)
+				OUTPUT.selectionStart = caretPos + 1
+				OUTPUT.selectionEnd = caretPos + 1
+			}
 		}
 	}
 
@@ -157,8 +171,14 @@ KEYBOARD.addEventListener('click', (e) => {
 				OUTPUT.selectionEnd = caretPos
 			}
 		}
+		if (dataValue === 'Shift-right' || dataValue === 'Shift-left') {
+			!shiftActive ? shiftActive = true : shiftActive = false;
+			console.log(shiftActive)
+			KEYBOARD.querySelectorAll('.shift').forEach(elem => {
+				elem.classList.toggle('key-active')
+			})
+		}
 	}
-	console.log()
 })
 
 
