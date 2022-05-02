@@ -31,7 +31,7 @@ BODY.innerHTML = template;
 
 //key template
 const KEYBOARD = document.querySelector('.keyboard-wrapper');
-let serverKeys = ['Tab', 'Backspace', 'Del', 'Shift'];
+let serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock'];
 let shiftActive = false;
 
 function createKey(value, shiftValue, keyCode, inner) {
@@ -173,11 +173,15 @@ KEYBOARD.addEventListener('click', (e) => {
 		}
 		if (dataValue === 'Shift-right' || dataValue === 'Shift-left') {
 			!shiftActive ? shiftActive = true : shiftActive = false;
-			console.log(shiftActive)
 			KEYBOARD.querySelectorAll('.shift').forEach(elem => {
 				elem.classList.toggle('key-active')
 			})
 		}
+		if (dataValue === 'CapsLock') {
+			!shiftActive ? shiftActive = true : shiftActive = false;
+			KEYBOARD.querySelector('[data-value="CapsLock"]').classList.toggle('key-active')
+		}
+
 	}
 })
 
