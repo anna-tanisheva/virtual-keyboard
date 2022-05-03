@@ -31,7 +31,7 @@ BODY.innerHTML = template;
 
 //key template
 const KEYBOARD = document.querySelector('.keyboard-wrapper');
-let serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock'];
+let serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock', 'Enter'];
 let shiftActive = false;
 
 function createKey(value, shiftValue, keyCode, inner) {
@@ -85,6 +85,16 @@ function createKey(value, shiftValue, keyCode, inner) {
 	return key;
 }
 
+function handleClickOnEnter(event) {
+	let caretPos = OUTPUT.selectionStart;
+	OUTPUT.value =
+		OUTPUT.value.substring(0, OUTPUT.selectionStart) +
+		"\n" +
+		OUTPUT.value.substring(OUTPUT.selectionEnd, OUTPUT.value.length);
+	console.log(OUTPUT.selectionStart, OUTPUT.selectionEnd)
+	OUTPUT.selectionStart = caretPos + 1;
+	OUTPUT.selectionEnd = caretPos + 1;
+}
 
 //fetch keys
 let data = []
@@ -106,7 +116,6 @@ window.addEventListener('load', () => {
 })
 
 //event listeners on virtual keyboard
-// let keys = KEYBOARD.querySelectorAll('.key');
 
 //EL for always focused textarea
 const OUTPUT = document.querySelector('.output')
@@ -181,7 +190,9 @@ KEYBOARD.addEventListener('click', (e) => {
 			!shiftActive ? shiftActive = true : shiftActive = false;
 			KEYBOARD.querySelector('[data-value="CapsLock"]').classList.toggle('key-active')
 		}
-
+		if (dataValue === 'Enter') {
+			handleClickOnEnter(e);
+		}
 	}
 })
 
