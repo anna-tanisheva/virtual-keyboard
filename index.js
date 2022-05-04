@@ -22,7 +22,7 @@ const template = `<header class="header">
         <span class="year">&copy;2022 &nbsp;</span>
         <a href="https://github.com/anna-tanisheva" class="footer-link github" target="_blank">Anna Tanisheva</a>
     </div>
-    <a href="#" class="footer-link rs" target="_blank">
+    <a href="https://rs.school/js/" class="footer-link rs" target="_blank">
         <img src="img/logo-rsschool3.png" alt="school-logo" class="logo">
     </a>
 </div>
@@ -34,6 +34,7 @@ const serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock', 'Enter', 'Sp
 let shiftActive = false;
 const storage = window.localStorage;
 let { lang } = storage;
+
 // key template
 function createKey(value, shiftValue, keyCode, inner) {
   const key = document.createElement('div');
@@ -73,6 +74,7 @@ function createKey(value, shiftValue, keyCode, inner) {
     }
     if (serverKeys.includes(inner[0])) {
       keyOverlay.classList.add('server');
+      key.classList.add('server-key');
     }
     if (key.getAttribute('data-value') === 'Shift-left' || key.getAttribute('data-value') === 'Shift-right') {
       key.classList.add('shift');
@@ -89,6 +91,7 @@ function createKey(value, shiftValue, keyCode, inner) {
   key.append(keyOverlay);
   return key;
 }
+
 // fetch keys function
 const QUERY_EN = {
   load: 'data/keyboard_en.json',
@@ -119,7 +122,7 @@ if (storage.lang !== 'eng') {
   });
 }
 LANG_TOGGLER.addEventListener('click', (e) => {
-  if (e.target.classList.contains('lang')) {
+  if (e.target.classList.contains('lang') && !e.target.classList.contains('active-lang')) {
     lang = e.target.getAttribute('data-value');
     storage.lang = lang;
     LANG_TOGGLER.querySelectorAll('.lang').forEach((elem) => {
@@ -163,10 +166,10 @@ window.addEventListener('load', () => {
 // event listeners on virtual keyboard
 
 // EL for always focused textarea
-// const OUTPUT = document.querySelector('.output');
 OUTPUT.addEventListener('blur', () => {
   OUTPUT.focus();
 });
+
 // EL for keyboard
 KEYBOARD.addEventListener('click', (e) => {
   // EL for regular keys
@@ -267,7 +270,6 @@ KEYBOARD.addEventListener('mousedown', (e) => {
   }
   KEYBOARD.addEventListener('mouseup', (event) => {
     if ((event.target.classList.contains('key-overlay') && !event.target.parentNode.classList.contains('shift')) && (event.target.classList.contains('key-overlay') && !event.target.parentNode.classList.contains('caps-lock'))) {
-      console.log(event.target.parentNode.classList);
       event.target.parentNode.classList.remove('key-active');
     }
   });
@@ -285,3 +287,8 @@ window.addEventListener('keydown', (e) => {
     }
   });
 });
+// const keys = document.querySelectorAll('.key');
+// console.log(keys);
+// keys.forEach((node) => {
+//   node.addEventListener('click', clickEffect);
+// });
