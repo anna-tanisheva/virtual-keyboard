@@ -4,7 +4,7 @@ const template = `<header class="header">
 <div class="container">
 <div class="os"><p>Made for:</p> <div class="os-pic"></div> </div>
     <h1 class="main-header">Virtual Keyboard</h1>
-    <div class="lang-toggler"><span class="lang active-lang" data-value="eng">Eng</span>
+    <div class="lang-toggler"><span class="lang" data-value="eng">Eng</span>
     <span> / </span>
     <span class="lang" data-value="ru">Ru</span>
     </div>
@@ -12,8 +12,15 @@ const template = `<header class="header">
 </header>
 <main class="main">
 <div class="container">
-    <textarea name="output" id="output" cols="30" rows="10" class="output" autofocus></textarea>
-
+    <textarea name="output" id="output" cols="30" rows="5" class="output" autofocus></textarea>
+    <div class="shortcuts">
+    <h3>You can use these shortcuts on the virtual keyboard:</h3>
+    <ul>
+    <li><p><span>Change Language: </span><span>Ctrl + Shift</span></p></li>
+    <li><p><span>Insert &copy;: </span><span>Ctrl + Alt + C</span></p></li>
+    </ul>
+    
+    </div>
     <div class="keyboard-wrapper"></div>
 </div>
 </main>
@@ -34,6 +41,8 @@ const KEYBOARD = document.querySelector('.keyboard-wrapper');
 const serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock', 'Enter', 'Space', '&#8593', '&#8592', '&#8595', '&#8594', 'Ctrl', 'Alt', 'Win'];
 let shiftActive = false;
 let capsActive = false;
+const pressedKeys = new Set();
+
 const storage = window.localStorage;
 let { lang } = storage;
 
@@ -82,6 +91,10 @@ function createKey(value, shiftValue, keyCode, inner) {
       key.classList.add('shift');
     } else if (key.getAttribute('data-value') === 'CapsLock') {
       key.classList.add('caps-lock');
+    } else if (key.getAttribute('data-value') === 'Ctrl-left' || key.getAttribute('data-value') === 'Ctrl-right') {
+      key.classList.add('ctrl');
+    } else if (key.getAttribute('data-value') === 'Alt-left' || key.getAttribute('data-value') === 'Alt-right') {
+      key.classList.add('alt');
     }
     if (key.getAttribute('data-value') !== 'Space') {
       const first = document.createElement('span');
@@ -116,20 +129,38 @@ async function fetchKeys(query) {
 if (!storage.lang) {
   storage.lang = 'eng';
 }
-
 const LANG_TOGGLER = document.querySelector('.lang-toggler');
-if (storage.lang !== 'eng') {
-  LANG_TOGGLER.querySelectorAll('.lang').forEach((elem) => {
-    elem.classList.toggle('active-lang');
-  });
-}
-LANG_TOGGLER.addEventListener('click', (e) => {
-  if (e.target.classList.contains('lang') && !e.target.classList.contains('active-lang')) {
-    lang = e.target.getAttribute('data-value');
-    storage.lang = lang;
+const toggleLang = function (e) {
+  if (!e.target.classList.contains('lang')) {
+    if (storage.lang === 'eng') {
+      lang = 'ru';
+      storage.lang = lang;
+    } else {
+      lang = 'eng';
+      storage.lang = lang;
+    }
+
+    KEYBOARD.innerHTML = '';
+    if (storage.lang === 'eng') {
+      fetchKeys(QUERY_EN);
+    } else {
+      fetchKeys(QUERY_RU);
+    }
     LANG_TOGGLER.querySelectorAll('.lang').forEach((elem) => {
       elem.classList.toggle('active-lang');
     });
+  } else if (e.target.classList.contains('lang') && !e.target.classList.contains('active-lang')) {
+    LANG_TOGGLER.querySelectorAll('.lang').forEach((elem) => {
+      elem.classList.toggle('active-lang');
+    });
+    if (storage.lang === 'eng') {
+      lang = 'ru';
+      storage.lang = lang;
+    } else {
+      lang = 'eng';
+      storage.lang = lang;
+    }
+
     KEYBOARD.innerHTML = '';
     if (storage.lang === 'eng') {
       fetchKeys(QUERY_EN);
@@ -137,7 +168,9 @@ LANG_TOGGLER.addEventListener('click', (e) => {
       fetchKeys(QUERY_RU);
     }
   }
-});
+};
+
+LANG_TOGGLER.addEventListener('click', toggleLang);
 
 function handleClickOnEnter() {
   const caretPos = OUTPUT.selectionStart;
@@ -158,6 +191,14 @@ const handleArrows = (symbol) => {
 };
 
 window.addEventListener('load', () => {
+  LANG_TOGGLER.querySelectorAll('.lang').forEach((elem) => {
+    console.log(elem);
+    if (elem.getAttribute('data-value') === storage.lang) {
+      elem.classList.add('active-lang');
+    } else {
+      elem.classList.remove('active-lang');
+    }
+  });
   if (storage.lang === 'eng') {
     fetchKeys(QUERY_EN);
   } else {
@@ -175,13 +216,46 @@ OUTPUT.addEventListener('blur', () => {
 // EL for keyboard
 KEYBOARD.addEventListener('click', (e) => {
   // EL for regular keys
+
   const caretPos = OUTPUT.selectionStart;
 
   if (e.target.classList.contains('key-overlay') && !e.target.classList.contains('server')) {
     const clickedKey = e.target.parentNode;
     const dataValue = clickedKey.getAttribute('data-value');
     const dataShiftValue = clickedKey.getAttribute('data-shift-value');
-    if (!shiftActive && !capsActive) {
+    if (dataValue === 'c' || dataValue === 'с') {
+      if (pressedKeys.has('alt') && pressedKeys.has('ctrl')) {
+        const temp = document.createElement('div');
+        temp.innerHTML = '&copy;';
+        OUTPUT.value = OUTPUT.value.substring(0, OUTPUT.selectionStart)
+          + temp.childNodes[0].data
+          + OUTPUT.value.substring(OUTPUT.selectionEnd, OUTPUT.value.length);
+        OUTPUT.selectionStart = caretPos + 1;
+        OUTPUT.selectionEnd = caretPos + 1;
+        pressedKeys.clear();
+        KEYBOARD.querySelectorAll('.alt').forEach((elem) => {
+          elem.classList.remove('key-active');
+        });
+        KEYBOARD.querySelectorAll('.ctrl').forEach((elem) => {
+          elem.classList.remove('key-active');
+        });
+      } else if (!shiftActive && !capsActive) {
+        if (caretPos === OUTPUT.value.length) {
+          OUTPUT.value += dataValue;
+        } else if (caretPos < OUTPUT.value.length) {
+          OUTPUT.value = OUTPUT.value.slice(0, caretPos) + dataValue + OUTPUT.value.slice(caretPos);
+          OUTPUT.selectionStart = caretPos + 1;
+          OUTPUT.selectionEnd = caretPos + 1;
+        }
+      } else if (caretPos === OUTPUT.value.length) {
+        OUTPUT.value += dataShiftValue;
+      } else if (caretPos < OUTPUT.value.length) {
+        OUTPUT.value = OUTPUT.value.slice(0, caretPos)
+          + dataShiftValue + OUTPUT.value.slice(caretPos);
+        OUTPUT.selectionStart = caretPos + 1;
+        OUTPUT.selectionEnd = caretPos + 1;
+      }
+    } else if (!shiftActive && !capsActive) {
       if (caretPos === OUTPUT.value.length) {
         OUTPUT.value += dataValue;
       } else if (caretPos < OUTPUT.value.length) {
@@ -228,18 +302,26 @@ KEYBOARD.addEventListener('click', (e) => {
       }
     }
     if (dataValue === 'Shift-right' || dataValue === 'Shift-left') {
-      shiftActive = true;
-      KEYBOARD.querySelectorAll('.shift').forEach((elem) => {
-        elem.classList.toggle('key-active');
-      });
-      KEYBOARD.addEventListener('click', (event) => {
-        if (event.target.classList.contains('key-overlay') && !event.target.classList.contains('server')) {
-          shiftActive = false;
-          KEYBOARD.querySelectorAll('.shift').forEach((elem) => {
-            elem.classList.toggle('key-active');
-          });
+      if (!pressedKeys.has('ctrl')) {
+        shiftActive = true;
+        KEYBOARD.querySelectorAll('.shift').forEach((elem) => {
+          elem.classList.toggle('key-active');
+        });
+        KEYBOARD.addEventListener('click', (event) => {
+          if (event.target.classList.contains('key-overlay') && !event.target.classList.contains('server')) {
+            shiftActive = false;
+            KEYBOARD.querySelectorAll('.shift').forEach((elem) => {
+              elem.classList.toggle('key-active');
+            });
+          }
+        }, { once: true });
+      } else if (pressedKeys.has('ctrl')) {
+        toggleLang(e);
+        pressedKeys.clear();
+        if (KEYBOARD.querySelectorAll('.ctrl').classList) {
+          KEYBOARD.querySelectorAll('.ctrl').classList.remove('key-active');
         }
-      }, { once: true });
+      }
     }
     if (dataValue === 'CapsLock') {
       if (!capsActive) {
@@ -254,6 +336,34 @@ KEYBOARD.addEventListener('click', (e) => {
     }
     if (dataValue === 'Space') {
       OUTPUT.value += ' ';
+    }
+    if (dataValue === 'Ctrl-left' || dataValue === 'Ctrl-right') {
+      pressedKeys.add('ctrl');
+      KEYBOARD.querySelectorAll('.ctrl').forEach((elem) => {
+        elem.classList.add('key-active');
+      });
+      KEYBOARD.addEventListener('click', (event) => {
+        if (event.target.classList.contains('key-overlay') && !event.target.classList.contains('server')) {
+          shiftActive = false;
+          KEYBOARD.querySelectorAll('.ctrl').forEach((elem) => {
+            elem.classList.remove('key-active');
+          });
+        }
+      }, { once: true });
+    }
+    if (dataValue === 'Alt-left' || dataValue === 'Alt-left') {
+      pressedKeys.add('alt');
+      KEYBOARD.querySelectorAll('.alt').forEach((elem) => {
+        elem.classList.add('key-active');
+      });
+      KEYBOARD.addEventListener('click', (event) => {
+        if (event.target.classList.contains('key-overlay') && !event.target.classList.contains('server')) {
+          shiftActive = false;
+          KEYBOARD.querySelectorAll('.alt').forEach((elem) => {
+            elem.classList.remove('key-active');
+          });
+        }
+      }, { once: true });
     }
     if (dataValue === 'Arrow-left') {
       handleArrows('&#8592');
