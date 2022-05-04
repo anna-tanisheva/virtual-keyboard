@@ -33,6 +33,7 @@ const OUTPUT = document.querySelector('.output');
 const KEYBOARD = document.querySelector('.keyboard-wrapper');
 const serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock', 'Enter', 'Space', '&#8593', '&#8592', '&#8595', '&#8594', 'Ctrl', 'Alt', 'Win'];
 let shiftActive = false;
+let capsActive = false;
 const storage = window.localStorage;
 let { lang } = storage;
 
@@ -180,7 +181,7 @@ KEYBOARD.addEventListener('click', (e) => {
     const clickedKey = e.target.parentNode;
     const dataValue = clickedKey.getAttribute('data-value');
     const dataShiftValue = clickedKey.getAttribute('data-shift-value');
-    if (!shiftActive) {
+    if (!shiftActive && !capsActive) {
       if (caretPos === OUTPUT.value.length) {
         OUTPUT.value += dataValue;
       } else if (caretPos < OUTPUT.value.length) {
@@ -227,20 +228,24 @@ KEYBOARD.addEventListener('click', (e) => {
       }
     }
     if (dataValue === 'Shift-right' || dataValue === 'Shift-left') {
-      if (!shiftActive) {
-        shiftActive = true;
-      } else {
-        shiftActive = false;
-      }
+      shiftActive = true;
       KEYBOARD.querySelectorAll('.shift').forEach((elem) => {
         elem.classList.toggle('key-active');
       });
+      KEYBOARD.addEventListener('click', (event) => {
+        if (event.target.classList.contains('key-overlay') && !event.target.classList.contains('server')) {
+          shiftActive = false;
+          KEYBOARD.querySelectorAll('.shift').forEach((elem) => {
+            elem.classList.toggle('key-active');
+          });
+        }
+      }, { once: true });
     }
     if (dataValue === 'CapsLock') {
-      if (!shiftActive) {
-        shiftActive = true;
+      if (!capsActive) {
+        capsActive = true;
       } else {
-        shiftActive = false;
+        capsActive = false;
       }
       KEYBOARD.querySelector('.caps-lock').classList.toggle('key-active');
     }
