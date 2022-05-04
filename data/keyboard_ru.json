@@ -1,0 +1,730 @@
+[
+  {
+    "inner": [
+      "ё",
+      "Ё"
+    ],
+    "keyCode": "192",
+    "value": "ё",
+    "shiftValue": "Ё",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "1",
+      "!"
+    ],
+    "keyCode": "49",
+    "value": "1",
+    "shiftValue": "!",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "2",
+      "\""
+    ],
+    "keyCode": "50",
+    "value": "2",
+    "shiftValue": "\"",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "3",
+      "№"
+    ],
+    "keyCode": "51",
+    "value": "3",
+    "shiftValue": "№",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "4",
+      ";"
+    ],
+    "keyCode": "52",
+    "value": ";",
+    "shiftValue": ";",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "5",
+      "%"
+    ],
+    "keyCode": "53",
+    "value": "5",
+    "shiftValue": "%",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "6",
+      ":"
+    ],
+    "keyCode": "54",
+    "value": "6",
+    "shiftValue": ":",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "7",
+      "?"
+    ],
+    "keyCode": "55",
+    "value": "7",
+    "shiftValue": "?",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "8",
+      "*"
+    ],
+    "keyCode": "56",
+    "value": "8",
+    "shiftValue": "*",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "9",
+      "("
+    ],
+    "keyCode": "57",
+    "value": "9",
+    "shiftValue": "(",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "0",
+      ")"
+    ],
+    "keyCode": "48",
+    "value": "0",
+    "shiftValue": ")",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "-",
+      "_"
+    ],
+    "keyCode": "109",
+    "shiftKeyCode": "189",
+    "value": "-",
+    "shiftValue": "_",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "=",
+      "+"
+    ],
+    "keyCode": "61",
+    "shiftKeyCode": "107",
+    "value": "=",
+    "shiftValue": "+",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Backspace"
+    ],
+    "keyCode": "8",
+    "shiftKeyCode": "false",
+    "value": "Backspace",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Tab"
+    ],
+    "keyCode": "9",
+    "shiftKeyCode": "false",
+    "value": "Tab",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "й",
+      "Й"
+    ],
+    "keyCode": "89",
+    "shiftKeyCode": "false",
+    "value": "й",
+    "shiftValue": "Й",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ц",
+      "Ц"
+    ],
+    "keyCode": "87",
+    "shiftKeyCode": "false",
+    "value": "ц",
+    "shiftValue": "Ц",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "у",
+      "У"
+    ],
+    "keyCode": "85",
+    "shiftKeyCode": "false",
+    "value": "у",
+    "shiftValue": "У",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "к",
+      "К"
+    ],
+    "keyCode": "75",
+    "shiftKeyCode": "false",
+    "value": "к",
+    "shiftValue": "К",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "е",
+      "Е"
+    ],
+    "keyCode": "69",
+    "shiftKeyCode": "false",
+    "value": "е",
+    "shiftValue": "Е",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "н",
+      "Н"
+    ],
+    "keyCode": "78",
+    "shiftKeyCode": "false",
+    "value": "н",
+    "shiftValue": "Н",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "г",
+      "Г"
+    ],
+    "keyCode": "71",
+    "shiftKeyCode": "false",
+    "value": "г",
+    "shiftValue": "Г",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ш",
+      "Ш"
+    ],
+    "keyCode": "73",
+    "shiftKeyCode": "false",
+    "value": "ш",
+    "shiftValue": "Ш",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "щ",
+      "Щ"
+    ],
+    "keyCode": "79",
+    "shiftKeyCode": "false",
+    "value": "щ",
+    "shiftValue": "Щ",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "з",
+      "З"
+    ],
+    "keyCode": "90",
+    "shiftKeyCode": "false",
+    "value": "з",
+    "shiftValue": "З",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "х",
+      "Х"
+    ],
+    "keyCode": "219",
+    "shiftKeyCode": "false",
+    "value": "х",
+    "shiftValue": "Х",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ъ",
+      "Ъ"
+    ],
+    "keyCode": "221",
+    "shiftKeyCode": "false",
+    "value": "ъ",
+    "shiftValue": "Ъ",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Del"
+    ],
+    "keyCode": "46",
+    "shiftKeyCode": "false",
+    "value": "Del",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "CapsLock"
+    ],
+    "keyCode": "20",
+    "shiftKeyCode": "false",
+    "value": "CapsLock",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ф",
+      "Ф"
+    ],
+    "keyCode": "70",
+    "shiftKeyCode": "false",
+    "value": "ф",
+    "shiftValue": "Ф",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ы",
+      "Ы"
+    ],
+    "keyCode": "89",
+    "shiftKeyCode": "false",
+    "value": "ы",
+    "shiftValue": "Ы",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "в",
+      "В"
+    ],
+    "keyCode": "86",
+    "shiftKeyCode": "false",
+    "value": "в",
+    "shiftValue": "В",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "а",
+      "А"
+    ],
+    "keyCode": "65",
+    "shiftKeyCode": "false",
+    "value": "а",
+    "shiftValue": "А",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "п",
+      "П"
+    ],
+    "keyCode": "80",
+    "shiftKeyCode": "false",
+    "value": "п",
+    "shiftValue": "П",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "р",
+      "Р"
+    ],
+    "keyCode": "82",
+    "shiftKeyCode": "false",
+    "value": "р",
+    "shiftValue": "Р",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "о",
+      "О"
+    ],
+    "keyCode": "79",
+    "shiftKeyCode": "false",
+    "value": "о",
+    "shiftValue": "О",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "л",
+      "Л"
+    ],
+    "keyCode": "76",
+    "shiftKeyCode": "false",
+    "value": "л",
+    "shiftValue": "Л",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "д",
+      "Д"
+    ],
+    "keyCode": "68",
+    "shiftKeyCode": "false",
+    "value": "д",
+    "shiftValue": "Д",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ж",
+      "Ж"
+    ],
+    "keyCode": "186",
+    "shiftKeyCode": "false",
+    "value": "ж",
+    "shiftValue": "Ж",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "э",
+      "Э"
+    ],
+    "keyCode": "69",
+    "shiftKeyCode": "false",
+    "value": "э",
+    "shiftValue": "Э",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Enter"
+    ],
+    "keyCode": "13",
+    "shiftKeyCode": "false",
+    "value": "Enter",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Shift"
+    ],
+    "keyCode": "16",
+    "shiftKeyCode": "false",
+    "value": "Shift-left",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "я",
+      "Я"
+    ],
+    "keyCode": "90",
+    "shiftKeyCode": "false",
+    "value": "я",
+    "shiftValue": "Я",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ч",
+      "Ч"
+    ],
+    "keyCode": "88",
+    "shiftKeyCode": "false",
+    "value": "ч",
+    "shiftValue": "Ч",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "с",
+      "С"
+    ],
+    "keyCode": "83",
+    "shiftKeyCode": "false",
+    "value": "с",
+    "shiftValue": "С",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "м",
+      "М"
+    ],
+    "keyCode": "77",
+    "shiftKeyCode": "false",
+    "value": "м",
+    "shiftValue": "М",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "и",
+      "И"
+    ],
+    "keyCode": "73",
+    "shiftKeyCode": "false",
+    "value": "и",
+    "shiftValue": "И",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "т",
+      "Т"
+    ],
+    "keyCode": "84",
+    "shiftKeyCode": "false",
+    "value": "т",
+    "shiftValue": "Т",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ь",
+      "Ь"
+    ],
+    "keyCode": "77",
+    "shiftKeyCode": "false",
+    "value": "ь",
+    "shiftValue": "Ь",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "б",
+      "Б"
+    ],
+    "keyCode": "66",
+    "shiftKeyCode": "false",
+    "value": "б",
+    "shiftValue": "Б",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "ю",
+      "Ю"
+    ],
+    "keyCode": "190",
+    "shiftKeyCode": "false",
+    "value": "ю",
+    "shiftValue": "Ю",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      ".",
+      ","
+    ],
+    "keyCode": "190",
+    "shiftKeyCode": "108",
+    "value": ".",
+    "shiftValue": ",",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "&#8593"
+    ],
+    "keyCode": "38",
+    "shiftKeyCode": "false",
+    "value": "Arrow-up",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Shift"
+    ],
+    "keyCode": "16",
+    "shiftKeyCode": "false",
+    "value": "Shift-right",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Ctrl"
+    ],
+    "keyCode": "17",
+    "shiftKeyCode": "false",
+    "value": "Ctrl-left",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Win"
+    ],
+    "keyCode": "91",
+    "shiftKeyCode": "false",
+    "value": "Win",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Alt"
+    ],
+    "keyCode": "18",
+    "shiftKeyCode": "false",
+    "value": "Alt-left",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Space"
+    ],
+    "keyCode": "32",
+    "shiftKeyCode": "false",
+    "value": "Space",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Alt"
+    ],
+    "keyCode": "18",
+    "shiftKeyCode": "false",
+    "value": "Alt-right",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "Ctrl"
+    ],
+    "keyCode": "17",
+    "shiftKeyCode": "false",
+    "value": "Ctrl-right",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "&#8592"
+    ],
+    "keyCode": "37",
+    "shiftKeyCode": "false",
+    "value": "Arrow-left",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "&#8595"
+    ],
+    "keyCode": "40",
+    "shiftKeyCode": "false",
+    "value": "Arrow-down",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  },
+  {
+    "inner": [
+      "&#8594"
+    ],
+    "keyCode": "39",
+    "shiftKeyCode": "false",
+    "value": "Arrow-right",
+    "shiftValue": "false",
+    "ctrlValue": "false",
+    "altValue": "false"
+  }
+]

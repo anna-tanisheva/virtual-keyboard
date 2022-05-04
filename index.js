@@ -3,6 +3,10 @@ const BODY = document.querySelector('body');
 const template = `<header class="header">
 <div class="container">
     <h1 class="main-header">Virtual Keyboard</h1>
+    <div class="lang-toggler"><span class="lang active-lang" data-value="eng">Eng</span>
+    <span> / </span>
+    <span class="lang" data-value="ru">Ru</span>
+    </div>
 </div>
 </header>
 <main class="main">
@@ -25,10 +29,12 @@ const template = `<header class="header">
 </footer>`;
 BODY.innerHTML = template;
 const OUTPUT = document.querySelector('.output');
-// key template
 const KEYBOARD = document.querySelector('.keyboard-wrapper');
 const serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock', 'Enter', 'Space', '&#8593', '&#8592', '&#8595', '&#8594', 'Ctrl', 'Alt', 'Win'];
 let shiftActive = false;
+const storage = window.localStorage;
+let { lang } = storage;
+// key template
 function createKey(value, shiftValue, keyCode, inner) {
   const key = document.createElement('div');
   const keyOverlay = document.createElement('div');
@@ -81,25 +87,13 @@ function createKey(value, shiftValue, keyCode, inner) {
   key.append(keyOverlay);
   return key;
 }
-function handleClickOnEnter() {
-  const caretPos = OUTPUT.selectionStart;
-  OUTPUT.value = `${OUTPUT.value.substring(0, OUTPUT.selectionStart)}\n${OUTPUT.value.substring(OUTPUT.selectionEnd, OUTPUT.value.length)}`;
-  OUTPUT.selectionStart = caretPos + 1;
-  OUTPUT.selectionEnd = caretPos + 1;
-}
-const handleArrows = (symbol) => {
-  const caretPos = OUTPUT.selectionStart;
-  const temp = document.createElement('div');
-  temp.innerHTML = symbol;
-  OUTPUT.value = OUTPUT.value.substring(0, OUTPUT.selectionStart)
-    + temp.childNodes[0].data
-    + OUTPUT.value.substring(OUTPUT.selectionEnd, OUTPUT.value.length);
-  OUTPUT.selectionStart = caretPos + 1;
-  OUTPUT.selectionEnd = caretPos + 1;
-};
-// fetch keys
+// fetch keys function
 const QUERY_EN = {
   load: 'data/keyboard_en.json',
+  user: null,
+};
+const QUERY_RU = {
+  load: 'data/keyboard_ru.json',
   user: null,
 };
 async function fetchKeys(query) {
@@ -111,8 +105,57 @@ async function fetchKeys(query) {
     KEYBOARD.append(key);
   });
 }
+// setting up language
+if (!storage.lang) {
+  storage.lang = 'eng';
+}
+
+const LANG_TOGGLER = document.querySelector('.lang-toggler');
+if (storage.lang !== 'eng') {
+  LANG_TOGGLER.querySelectorAll('.lang').forEach((elem) => {
+    elem.classList.toggle('active-lang');
+  });
+}
+LANG_TOGGLER.addEventListener('click', (e) => {
+  if (e.target.classList.contains('lang')) {
+    lang = e.target.getAttribute('data-value');
+    storage.lang = lang;
+    LANG_TOGGLER.querySelectorAll('.lang').forEach((elem) => {
+      elem.classList.toggle('active-lang');
+    });
+    KEYBOARD.innerHTML = '';
+    if (storage.lang === 'eng') {
+      fetchKeys(QUERY_EN);
+    } else {
+      fetchKeys(QUERY_RU);
+    }
+  }
+});
+
+function handleClickOnEnter() {
+  const caretPos = OUTPUT.selectionStart;
+  OUTPUT.value = `${OUTPUT.value.substring(0, OUTPUT.selectionStart)}\n${OUTPUT.value.substring(OUTPUT.selectionEnd, OUTPUT.value.length)}`;
+  OUTPUT.selectionStart = caretPos + 1;
+  OUTPUT.selectionEnd = caretPos + 1;
+}
+
+const handleArrows = (symbol) => {
+  const caretPos = OUTPUT.selectionStart;
+  const temp = document.createElement('div');
+  temp.innerHTML = symbol;
+  OUTPUT.value = OUTPUT.value.substring(0, OUTPUT.selectionStart)
+    + temp.childNodes[0].data
+    + OUTPUT.value.substring(OUTPUT.selectionEnd, OUTPUT.value.length);
+  OUTPUT.selectionStart = caretPos + 1;
+  OUTPUT.selectionEnd = caretPos + 1;
+};
+
 window.addEventListener('load', () => {
-  fetchKeys(QUERY_EN);
+  if (storage.lang === 'eng') {
+    fetchKeys(QUERY_EN);
+  } else {
+    fetchKeys(QUERY_RU);
+  }
 });
 
 // event listeners on virtual keyboard
