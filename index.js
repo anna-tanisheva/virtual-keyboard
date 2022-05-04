@@ -2,6 +2,7 @@ const BODY = document.querySelector('body');
 
 const template = `<header class="header">
 <div class="container">
+<div class="os"><p>Made for:</p> <div class="os-pic"></div> </div>
     <h1 class="main-header">Virtual Keyboard</h1>
     <div class="lang-toggler"><span class="lang active-lang" data-value="eng">Eng</span>
     <span> / </span>
@@ -287,8 +288,3 @@ window.addEventListener('keydown', (e) => {
     }
   });
 });
-// const keys = document.querySelectorAll('.key');
-// console.log(keys);
-// keys.forEach((node) => {
-//   node.addEventListener('click', clickEffect);
-// });
