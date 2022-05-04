@@ -130,7 +130,7 @@ if (!storage.lang) {
   storage.lang = 'eng';
 }
 const LANG_TOGGLER = document.querySelector('.lang-toggler');
-const toggleLang = function (e) {
+function toggleLang(e) {
   if (!e.target.classList.contains('lang')) {
     if (storage.lang === 'eng') {
       lang = 'ru';
@@ -168,7 +168,7 @@ const toggleLang = function (e) {
       fetchKeys(QUERY_RU);
     }
   }
-};
+}
 
 LANG_TOGGLER.addEventListener('click', toggleLang);
 
