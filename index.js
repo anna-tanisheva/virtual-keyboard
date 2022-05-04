@@ -76,6 +76,8 @@ function createKey(value, shiftValue, keyCode, inner) {
     }
     if (key.getAttribute('data-value') === 'Shift-left' || key.getAttribute('data-value') === 'Shift-right') {
       key.classList.add('shift');
+    } else if (key.getAttribute('data-value') === 'CapsLock') {
+      key.classList.add('caps-lock');
     }
     if (key.getAttribute('data-value') !== 'Space') {
       const first = document.createElement('span');
@@ -192,7 +194,7 @@ KEYBOARD.addEventListener('click', (e) => {
     }
   }
 
-  // EL for serve keys
+  // Handlers for serve keys
   if (e.target.classList.contains('key-overlay') && e.target.classList.contains('server')) {
     const clickedKey = e.target.parentNode;
     const dataValue = clickedKey.getAttribute('data-value');
@@ -236,7 +238,7 @@ KEYBOARD.addEventListener('click', (e) => {
       } else {
         shiftActive = false;
       }
-      KEYBOARD.querySelector('[data-value="CapsLock"]').classList.toggle('key-active');
+      KEYBOARD.querySelector('.caps-lock').classList.toggle('key-active');
     }
     if (dataValue === 'Enter') {
       handleClickOnEnter(e);
@@ -257,4 +259,29 @@ KEYBOARD.addEventListener('click', (e) => {
       handleArrows('&#8595');
     }
   }
+});
+
+KEYBOARD.addEventListener('mousedown', (e) => {
+  if ((e.target.classList.contains('key-overlay') && !e.target.parentNode.classList.contains('shift')) && (e.target.classList.contains('key-overlay') && !e.target.parentNode.classList.contains('caps-lock'))) {
+    e.target.parentNode.classList.add('key-active');
+  }
+  KEYBOARD.addEventListener('mouseup', (event) => {
+    if ((event.target.classList.contains('key-overlay') && !event.target.parentNode.classList.contains('shift')) && (event.target.classList.contains('key-overlay') && !event.target.parentNode.classList.contains('caps-lock'))) {
+      console.log(event.target.parentNode.classList);
+      event.target.parentNode.classList.remove('key-active');
+    }
+  });
+});
+// EL on physical keyboard
+window.addEventListener('keydown', (e) => {
+  const pressedKeyCode = e.keyCode;
+
+  KEYBOARD.querySelectorAll('.key').forEach((elem) => {
+    if (pressedKeyCode === +elem.getAttribute('data-key')) {
+      elem.classList.add('key-active');
+      window.addEventListener('keyup', () => {
+        elem.classList.remove('key-active');
+      });
+    }
+  });
 });

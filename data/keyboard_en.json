@@ -125,7 +125,7 @@
 			"-",
 			"_"
 		],
-		"keyCode": "109",
+		"keyCode": "189",
 		"shiftKeyCode": "189",
 		"value": "-",
 		"shiftValue": "_",
@@ -137,7 +137,7 @@
 			"=",
 			"+"
 		],
-		"keyCode": "61",
+		"keyCode": "187",
 		"shiftKeyCode": "107",
 		"value": "=",
 		"shiftValue": "+",
@@ -291,8 +291,8 @@
 			"[",
 			"{"
 		],
-		"keyCode": "160",
-		"shiftKeyCode": "219",
+		"keyCode": "219",
+		"shiftKeyCode": "false",
 		"value": "[",
 		"shiftValue": "{",
 		"ctrlValue": "false",
@@ -445,7 +445,7 @@
 			";",
 			":"
 		],
-		"keyCode": "59",
+		"keyCode": "186",
 		"shiftKeyCode": "58",
 		"value": ";",
 		"shiftValue": ":",
@@ -575,7 +575,7 @@
 			",",
 			"<"
 		],
-		"keyCode": "108",
+		"keyCode": "188",
 		"shiftKeyCode": "60",
 		"value": ",",
 		"shiftValue": "<",
