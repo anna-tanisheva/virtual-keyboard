@@ -31,7 +31,7 @@ BODY.innerHTML = template;
 
 //key template
 const KEYBOARD = document.querySelector('.keyboard-wrapper');
-let serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock', 'Enter'];
+let serverKeys = ['Tab', 'Backspace', 'Del', 'Shift', 'CapsLock', 'Enter', 'Space', '&#8593', '&#8592', '&#8595', '&#8594'];
 let shiftActive = false;
 
 function createKey(value, shiftValue, keyCode, inner) {
@@ -76,10 +76,12 @@ function createKey(value, shiftValue, keyCode, inner) {
 		if (key.getAttribute('data-value') === 'Shift-left' || key.getAttribute('data-value') === 'Shift-right') {
 			key.classList.add('shift')
 		}
-		let first = document.createElement('span');
-		first.innerHTML += inner[0];
-		first.classList.add('inner');
-		key.append(first);
+		if (key.getAttribute('data-value') !== 'Space') {
+			let first = document.createElement('span');
+			first.innerHTML += inner[0];
+			first.classList.add('inner');
+			key.append(first);
+		}
 	}
 	key.append(keyOverlay)
 	return key;
@@ -91,11 +93,21 @@ function handleClickOnEnter(event) {
 		OUTPUT.value.substring(0, OUTPUT.selectionStart) +
 		"\n" +
 		OUTPUT.value.substring(OUTPUT.selectionEnd, OUTPUT.value.length);
-	console.log(OUTPUT.selectionStart, OUTPUT.selectionEnd)
+	// console.log(OUTPUT.selectionStart, OUTPUT.selectionEnd)
 	OUTPUT.selectionStart = caretPos + 1;
 	OUTPUT.selectionEnd = caretPos + 1;
 }
-
+const handleArrows = (symbol) => {
+	let caretPos = OUTPUT.selectionStart
+	let temp = document.createElement('div');
+	temp.innerHTML = symbol;
+	OUTPUT.value =
+		OUTPUT.value.substring(0, OUTPUT.selectionStart) +
+		temp.childNodes[0].data +
+		OUTPUT.value.substring(OUTPUT.selectionEnd, OUTPUT.value.length);
+	OUTPUT.selectionStart = caretPos + 1;
+	OUTPUT.selectionEnd = caretPos + 1;
+}
 //fetch keys
 let data = []
 const QUERY_EN = {
@@ -192,6 +204,22 @@ KEYBOARD.addEventListener('click', (e) => {
 		}
 		if (dataValue === 'Enter') {
 			handleClickOnEnter(e);
+		}
+		if (dataValue === 'Space') {
+			OUTPUT.value += ' '
+		}
+		if (dataValue === 'Arrow-left') {
+			handleArrows('&#8592')
+		}
+		if (dataValue === 'Arrow-right') {
+			handleArrows('&#8594')
+
+		}
+		if (dataValue === 'Arrow-up') {
+			handleArrows('&#8593')
+		}
+		if (dataValue === 'Arrow-down') {
+			handleArrows('&#8595')
 		}
 	}
 })
