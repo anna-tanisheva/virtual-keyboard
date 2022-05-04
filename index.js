@@ -192,7 +192,6 @@ const handleArrows = (symbol) => {
 
 window.addEventListener('load', () => {
   LANG_TOGGLER.querySelectorAll('.lang').forEach((elem) => {
-    console.log(elem);
     if (elem.getAttribute('data-value') === storage.lang) {
       elem.classList.add('active-lang');
     } else {
