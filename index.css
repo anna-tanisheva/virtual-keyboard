@@ -1,0 +1,407 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Manrope', sans-serif;
+  color: #212720;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+.header,
+.footer {
+  height: 120px;
+  background-color: #2a5050;
+  color: #f0f8ff;
+}
+
+.header .container {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.header .main-header {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 4;
+  grid-column: 5 / 9;
+  text-align: center;
+}
+
+.header .os {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.header .os p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 80px;
+      flex-basis: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .os .os-pic {
+  background-image: url("img/microsoft-windows-22.svg");
+  width: 50px;
+  height: 50px;
+}
+
+.header .lang-toggler {
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 2;
+  grid-column: 11 / 13;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.header .lang-toggler span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 50px;
+      flex-basis: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.header .active-lang {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.header .lang {
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.header .lang:hover {
+  color: #d7ecff;
+}
+
+.main .container {
+  -ms-grid-rows: 80px 1fr 100px 1fr 80px;
+      grid-template-rows: 80px 1fr 100px 1fr 80px;
+}
+
+@media (max-width: 900px) {
+  .main .container {
+    -ms-grid-rows: 20px 150px 1fr 1fr 20px;
+        grid-template-rows: 20px 150px 1fr 1fr 20px;
+    gap: 10px;
+  }
+}
+
+.main .output {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-column: 1 / 8;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  resize: none;
+  padding: 10px;
+}
+
+@media (max-width: 900px) {
+  .main .output {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1 / 13;
+  }
+}
+
+.main .shortcuts {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 4;
+  grid-column: 9 / 13;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 55px 80px 30px 1fr 20px;
+      grid-template-rows: 55px 80px 30px 1fr 20px;
+  padding: 0 10px 0;
+  border: 1px solid #2a5050;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .main .shortcuts {
+    -ms-grid-rows: 30px 1fr;
+        grid-template-rows: 30px 1fr;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1 / 13;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    border: none;
+  }
+}
+
+.main .shortcuts h3 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+}
+
+@media (max-width: 900px) {
+  .main .shortcuts h3 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+  }
+}
+
+.main .shortcuts ul {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+  list-style: none;
+}
+
+@media (max-width: 900px) {
+  .main .shortcuts ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+}
+
+.main .keyboard-wrapper {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 / 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1 / 13;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[15];
+      grid-template-columns: repeat(15, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.main .key {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #212720;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.main .key .inner {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .key .inner-first {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  height: 70%;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  font-weight: 600;
+}
+
+.main .key .inner-second {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  height: 80%;
+}
+
+.main .span1 {
+  grid-column: span 1;
+}
+
+.main .span1 .inner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 50%;
+}
+
+.main .span2 {
+  grid-column: span 2;
+}
+
+.main .span2 .inner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 50%;
+}
+
+.main .span3 {
+  grid-column: span 3;
+}
+
+.main .span3 .inner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 50%;
+}
+
+.main .span6 {
+  grid-column: span 6;
+}
+
+.main .span6 .inner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 50%;
+}
+
+.main .key-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main .key-active {
+  background-color: #4d9393;
+}
+
+.main .server-key {
+  font-weight: 600;
+}
+
+.footer .container {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.footer .footer-git {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .footer-git .year,
+.footer .footer-git .github {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .footer-git .github {
+  text-decoration: none;
+  color: #f0f8ff;
+}
+
+.footer .footer-git .year {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.footer .rs {
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 2;
+  grid-column: 11 / 13;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.footer .logo {
+  height: 60px;
+  width: auto;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+  -webkit-filter: brightness(0) saturate(100%) invert(95%) sepia(72%) saturate(3723%) hue-rotate(179deg) brightness(110%) contrast(104%);
+          filter: brightness(0) saturate(100%) invert(95%) sepia(72%) saturate(3723%) hue-rotate(179deg) brightness(110%) contrast(104%);
+}
