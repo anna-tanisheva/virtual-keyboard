@@ -291,7 +291,13 @@ KEYBOARD.addEventListener('click', (e) => {
     }
 
     if (dataValue === 'Tab') {
-      OUTPUT.value += '    ';
+      if (caretPos < OUTPUT.value.length) {
+        OUTPUT.value = `${OUTPUT.value.slice(0, caretPos)}    ${OUTPUT.value.slice(caretPos)}`;
+        OUTPUT.selectionStart = caretPos + 4;
+        OUTPUT.selectionEnd = caretPos + 4;
+      } else {
+        OUTPUT.value += '    ';
+      }
     }
     if (dataValue === 'Del') {
       if (caretPos < OUTPUT.value.length) {
@@ -334,7 +340,13 @@ KEYBOARD.addEventListener('click', (e) => {
       handleClickOnEnter(e);
     }
     if (dataValue === 'Space') {
-      OUTPUT.value += ' ';
+      if (caretPos < OUTPUT.value.length) {
+        OUTPUT.value = `${OUTPUT.value.slice(0, caretPos)} ${OUTPUT.value.slice(caretPos)}`;
+        OUTPUT.selectionStart = caretPos + 1;
+        OUTPUT.selectionEnd = caretPos + 1;
+      } else {
+        OUTPUT.value += ' ';
+      }
     }
     if (dataValue === 'Ctrl-left' || dataValue === 'Ctrl-right') {
       pressedKeys.add('ctrl');
