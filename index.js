@@ -408,12 +408,26 @@ window.addEventListener('keydown', (e) => {
   KEYBOARD.querySelectorAll('.key').forEach((elem) => {
     if (pressedKeyCode === +elem.getAttribute('data-key')) {
       elem.classList.add('key-active');
+      if (pressedKeyCode === 20) {
+        if (capsActive) {
+          capsActive = false;
+        } else {
+          capsActive = true;
+        }
+      }
       window.addEventListener('keyup', () => {
         elem.classList.remove('key-active');
         if (pressedKeys.has('ctrl') && pressedKeys.has('shift')) {
           toggleLang(e);
         }
         pressedKeys.clear();
+        if (!capsActive) {
+          if (KEYBOARD.querySelector('.caps-lock').classList) {
+            KEYBOARD.querySelector('.caps-lock').classList.remove('key-active');
+          }
+        } else {
+          KEYBOARD.querySelector('.caps-lock').classList.add('key-active');
+        }
       });
     }
   });
