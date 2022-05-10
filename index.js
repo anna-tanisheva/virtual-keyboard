@@ -422,4 +422,14 @@ window.addEventListener('keydown', (e) => {
   } else if (pressedKeyCode === 16) {
     pressedKeys.add('shift');
   }
+  if (pressedKeyCode === 9) {
+    const caretPos = OUTPUT.selectionStart;
+    if (caretPos < OUTPUT.value.length) {
+      OUTPUT.value = `${OUTPUT.value.slice(0, caretPos)}    ${OUTPUT.value.slice(caretPos)}`;
+      OUTPUT.selectionStart = caretPos + 4;
+      OUTPUT.selectionEnd = caretPos + 4;
+    } else {
+      OUTPUT.value += '    ';
+    }
+  }
 });
