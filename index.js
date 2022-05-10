@@ -410,7 +410,16 @@ window.addEventListener('keydown', (e) => {
       elem.classList.add('key-active');
       window.addEventListener('keyup', () => {
         elem.classList.remove('key-active');
+        if (pressedKeys.has('ctrl') && pressedKeys.has('shift')) {
+          toggleLang(e);
+        }
+        pressedKeys.clear();
       });
     }
   });
+  if (pressedKeyCode === 17) {
+    pressedKeys.add('ctrl');
+  } else if (pressedKeyCode === 16) {
+    pressedKeys.add('shift');
+  }
 });
