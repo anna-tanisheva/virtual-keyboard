@@ -422,7 +422,7 @@ window.addEventListener('keydown', (e) => {
         }
         pressedKeys.clear();
         if (!capsActive) {
-          if (KEYBOARD.querySelector('.caps-lock').classList) {
+          if (KEYBOARD.querySelector('.caps-lock')) {
             KEYBOARD.querySelector('.caps-lock').classList.remove('key-active');
           }
         } else {
